@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Setup Game</title>
+  <link rel="stylesheet" href="setup.css" />
+</head>
+<body>
+  <div class="setup-container">
+    <h1>Select Players</h1>
+    <form id="setupForm">
+      <div>
+        <label>Mode:</label>
+        <select id="mode">
+          <option value="2">2 Players</option>
+          <option value="bot">Play with Bot</option>
+        </select>
+      </div>
+      <div>
+        <label>Player 1 Color:</label>
+        <select id="player1Color">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+      <div id="player2Section">
+        <label>Player 2 Color:</label>
+        <select id="player2Color">
+          <option value="red">Red</option>
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+      <button type="submit">Start Game</button>
+    </form>
+  </div>
+  <script>
+    const modeSelect = document.getElementById('mode');
+    const player2Section = document.getElementById('player2Section');
+
+    modeSelect.addEventListener('change', function () {
+      player2Section.style.display = modeSelect.value === 'bot' ? 'none' : 'block';
+    });
+
+    document.getElementById('setupForm').onsubmit = function(e) {
+      e.preventDefault();
+      const p1 = document.getElementById('player1Color').value;
+      const p2 = document.getElementById('player2Color').value;
+      const mode = document.getElementById('mode').value;
+
+      if (mode === '2' && p1 === p2) {
+        alert("Players can't have same color!");
+        return;
+      }
+
+      localStorage.setItem('player1Color', p1);
+      localStorage.setItem('mode', mode);
+      localStorage.setItem('player2Color', mode === 'bot' ? 'gray' : p2);
+
+      window.location.href = 'game.html';
+    }
+  </script>
+</body>
+</html>

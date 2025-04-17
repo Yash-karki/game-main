@@ -1,0 +1,88 @@
+/* === styles.css === */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background: linear-gradient(#a8e6a3, #d3f9b5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .setup-container {
+    background: #fff;
+    border: 5px dashed #4CAF50;
+    border-radius: 20px;
+    padding: 40px;
+    width: 320px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    animation: popIn 0.6s ease-out;
+    position: relative;
+  }
+  
+  @keyframes popIn {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  .setup-container h1 {
+    color: #2e7d32;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  form > div {
+    margin-bottom: 15px;
+    text-align: left;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #388e3c;
+    font-weight: bold;
+  }
+  
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 2px solid #66bb6a;
+    border-radius: 10px;
+    background-color: #e8f5e9;
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+  }
+  
+  select:focus {
+    border-color: #2e7d32;
+    background-color: #c8e6c9;
+  }
+  
+  button[type="submit"] {
+    background-color: #66bb6a;
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+    width: 100%;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #388e3c;
+  }
+  
+  @media (max-width: 400px) {
+    .setup-container {
+      width: 90%;
+      padding: 20px;
+    }
+  }
+  

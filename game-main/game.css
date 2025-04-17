@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #d4f5d4;
+  }
+  .txt {
+    display: block; /* Make span behave like a div */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #a1e6a1; /* soft green */
+    color: #2f4f2f; /* dark green text */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Push content down so it's not hidden behind fixed heading */
+  .game-layout {
+    margin-top: 80px;
+  }
+  
+  /* Push the game layout down so it doesn’t go under the header */
+  .game-layout {
+    margin-top: 80px;
+  }
+  
+  
+
+  .game-layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1000px;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: #f5fff5;
+  }
+
+  .game-container {
+    flex: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+  }
+
+  canvas {
+    width: 570px;
+    height: 460px;
+    background-image: url('board2.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 5px solid black;
+  }
+
+  .sidebar {
+    flex: 1;
+    padding: 20px;
+    background: #c4eec4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  #rollBtn {
+    padding: 15px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #4caf50;
+    color: white;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+
+  #status {
+    font-size: 18px;
+    color: #333;
+  }
+
+  @media screen and (max-width: 768px) {
+    .game-layout {
+      flex-direction: column;
+    }
+    .sidebar {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+}
