@@ -55,14 +55,18 @@ body {
   }
 
   canvas {
-    width: 570px;
-    height: 460px;
+    width: 100%;
+    max-width: 500px;
+    height: 400px;
     background-image: url('board2.png');
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-size: cover;
     background-position: center;
     border: 5px solid black;
   }
+  #diceImage {
+    margin-bottom: 10px;
+  }
+  
 
   .sidebar {
     flex: 1;
