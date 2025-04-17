@@ -7,6 +7,9 @@
   <link rel="stylesheet" href="setup.css" />
 </head>
 <body>
+  <!-- Hidden background audio -->
+  <audio id="bgAudio" src="soundtrack.mp3" autoplay loop></audio>
+
   <div class="setup-container">
     <h1>Select Players</h1>
     <form id="setupForm">
@@ -33,10 +36,26 @@
           <option value="green">Green</option>
         </select>
       </div>
+
+      <!-- Mute/Unmute Button -->
+      <button id="toggleAudio" type="button" class="audio-btn">🔊 Mute Music</button>
+
+      <!-- Start Game Button -->
       <button type="submit">Start Game</button>
     </form>
   </div>
+
   <script>
+    // Audio toggle
+    const audio = document.getElementById('bgAudio');
+    const toggleBtn = document.getElementById('toggleAudio');
+
+    toggleBtn.addEventListener('click', () => {
+      audio.muted = !audio.muted;
+      toggleBtn.textContent = audio.muted ? '🔇 Unmute Music' : '🔊 Mute Music';
+    });
+
+    // Game setup form
     const modeSelect = document.getElementById('mode');
     const player2Section = document.getElementById('player2Section');
 
